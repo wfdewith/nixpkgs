@@ -106,6 +106,7 @@ stdenv.mkDerivation (finalAttrs: {
         dnspython
         faust-cchardet
         feedparser
+        fonttools
         html2text
         html5-parser
         lxml
