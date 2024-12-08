@@ -108,6 +108,7 @@ stdenv.mkDerivation (finalAttrs: {
         dnspython
         faust-cchardet
         feedparser
+        fonttools
         html2text
         html5-parser
         lxml
@@ -206,7 +207,6 @@ stdenv.mkDerivation (finalAttrs: {
 
   doInstallCheck = true;
   installCheckInputs = with python3Packages; [
-    fonttools
     psutil
   ];
   installCheckPhase = ''
