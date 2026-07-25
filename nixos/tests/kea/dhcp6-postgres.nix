@@ -114,22 +114,10 @@
           };
         };
 
-        services.kea.ctrl-agent = {
-          enable = true;
-          settings = {
-            http-host = "127.0.0.1";
-            http-port = 8000;
-            control-sockets.dhcp6 = {
-              socket-type = "unix";
-              socket-name = "/run/kea/dhcp6.sock";
-            };
-          };
-        };
-
         services.prometheus.exporters.kea = {
           enable = true;
           controlSocketPaths = [
-            "http://127.0.0.1:8000"
+            config.services.kea.dhcp6.settings.control-socket.socket-name
           ];
         };
 
